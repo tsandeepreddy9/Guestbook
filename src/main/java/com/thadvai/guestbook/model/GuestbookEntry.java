@@ -64,6 +64,10 @@ public class GuestbookEntry {
 		return date;
 	}
 
+	public void setDate(LocalDateTime date) {
+		this.date = date;
+	}
+
 	public String getText() {
 		return text;
 	}

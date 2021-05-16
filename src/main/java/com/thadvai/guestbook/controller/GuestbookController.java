@@ -1,5 +1,6 @@
 package com.thadvai.guestbook.controller;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -69,6 +70,7 @@ public class GuestbookController {
 
         if (!bindingResult.hasErrors()) {
         	newEntry.setUser(this.guestbookEntryService.findCurrentLoggedinUser());
+        	newEntry.setDate(LocalDateTime.now());
             this.guestbookEntryService.save(newEntry);
             
             model.addAttribute(GUESTBOOK_FORM_HEADER_ID, "Entry Inserted");
