@@ -29,9 +29,9 @@ public class GuestbookEntryRunner implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		logger.info("user details {}",userRepository.findByName("user"));
 		guestbookEntryRepository.save(new GuestbookEntry(userRepository.findByName("user"), 
-				"first!!!"));
+				"First book Entry"));
 		guestbookEntryRepository.save(new GuestbookEntry(userRepository.findByName("user"), 
-				"Hasta la vista, baby"));
+				"User second Entry"));
 		
 		guestbookEntryRepository.findAll().forEach((city) -> {
             logger.info("{}", city.getUser());
