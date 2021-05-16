@@ -65,7 +65,7 @@ public class GuestbookController {
 	@PostMapping("/saveComment")
     public String addComment (Model model,
                               @Valid @ModelAttribute (NEW_ENTRY_TEMPLATE_ID) GuestbookEntry newEntry,
-                              @RequestParam("file") MultipartFile file, BindingResult bindingResult) {
+                               BindingResult bindingResult) {//@RequestParam("file") MultipartFile file,
 
         if (!bindingResult.hasErrors()) {
         	newEntry.setUser(this.guestbookEntryService.findCurrentLoggedinUser());
